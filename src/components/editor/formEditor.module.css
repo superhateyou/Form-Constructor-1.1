@@ -1,0 +1,91 @@
+.editorBox {
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 40px;
+    margin-top: 10px;
+}
+
+input {
+    width: 400px;
+    padding: 10px;
+	outline: none;
+	border: none;
+}
+
+button {
+    display: inline-block;
+    width: 180px;
+    height: 45px;
+    border-radius: 45px;
+    margin: 5px 20px;
+    text-align: center;
+
+    color: #524f4e;
+    background: white;
+    transition: .3s;
+}
+
+button:hover{
+    background: #6a6a6a;
+    color: white;
+}
+
+.formBox {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightgreen;
+    width: 90%;
+    height: 60px;
+    margin: 10px 0;
+    border-radius: 10px;
+    padding: 0 5px;
+}
+
+.inWidth {
+    width: 300px;
+}
+
+.formP {
+    font-weight: 600;
+}
+
+textarea {
+    width: 400px;
+    height: 200px;
+    border: none;
+    resize: none;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 15px; 
+  }
+
+  select {
+    margin: 25px 0;
+    width: 420px;
+    padding: 11px;
+    border-radius: 45px; 
+    outline: none;
+    border: none;
+  }
+
+  .multiSelect {
+      border-radius: 15px;
+      overflow: hidden;
+  }
+
+  .keyValue {
+      width: 100px;
+  }
+
+  .keyValueText {
+      width: 260px;
+      margin: 0;
+      margin-left: 20px;
+  }
