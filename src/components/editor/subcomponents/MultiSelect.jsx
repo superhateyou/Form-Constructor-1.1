@@ -2,7 +2,6 @@ import styles from './../formEditor.module.css'
 import { useState } from 'react'
 
 export const MultiSelect = ({data, changeHandler}) => {
-    const formState = {...data}
     const [selectedFields, setSelectedFields] = useState(data.value)
 
     const selectHandler = (e) => {
@@ -10,11 +9,11 @@ export const MultiSelect = ({data, changeHandler}) => {
       .filter(option => option.selected)
       .map(x => x.value);
         setSelectedFields(updatedSelections)
-        formState.value = updatedSelections
+        data.value = updatedSelections
     }
 
     const blurHandler = () => {
-        changeHandler(formState)
+        changeHandler(data)
     }
 
     return <select className={styles.multiSelect} 

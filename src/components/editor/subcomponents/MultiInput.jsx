@@ -9,7 +9,6 @@ export const MultiInput = ({data, changeHandler}) => {
         formLength = data.quantity
     } else (formLength = data.value.length)
 
-    const formState = {...data}
     const [lengthArr, setLengthArr] = useState(formLength)
     const [inputState, setInputState] = useState(data.value.reduce((acc, inputObj, index) => {
         acc[data.name + '_' + index] = data.value[index]
@@ -22,18 +21,18 @@ export const MultiInput = ({data, changeHandler}) => {
     
     const inputHandler = (miniInputState, e) => {
         setInputState({...inputState, [e.target.name] : miniInputState})  
-        formState.value[e.target.name.slice(-1)] = miniInputState
+        data.value[e.target.name.slice(-1)] = miniInputState
     }
 
     const blurHandler = () => {
-        changeHandler(formState)
+        changeHandler(data)
     }
 
     const renderField = () => {
         if (data.quantity > 0){
             for (let i = 0; i < lengthArr; i++){
-                let currentValue = formState.value[i]
                 let currentName = data.name + '_' + i
+                let currentValue = inputState[currentName]
                 let currentKey = data.name + '_' + i + '_' + data.type
                 tempArr.push(
                     <InputMultiPart 

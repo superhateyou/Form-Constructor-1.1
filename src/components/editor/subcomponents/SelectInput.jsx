@@ -1,16 +1,15 @@
 import { useState } from "react"
 
 export const SelectInput = ({data, changeHandler}) => {
-    const formState = {...data}
     const [inputState, setInputState] = useState(data.value)
 
     const inputHandler = (e) => {
         setInputState(e.target.value)
-        formState.value = e.target.value
+        data.value = e.target.value
     }
     
     const blurHandler = () => {
-        changeHandler(formState)
+        changeHandler(data)
     }
 
     return <select name={data.name} 

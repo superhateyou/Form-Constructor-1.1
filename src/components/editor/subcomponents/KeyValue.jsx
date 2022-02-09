@@ -3,7 +3,6 @@ import styles from './../formEditor.module.css'
 
 export const KeyValue = ({data, changeHandler}) => {
     const tempArr = data.options.slice()
-    const formState = {...data}
 
     const [keysState, setKeysState] = useState(data.keys.reduce((acc, inputObj, index) => {
         acc[data.name + '_key_' + index] = data.keys[index]
@@ -17,16 +16,16 @@ export const KeyValue = ({data, changeHandler}) => {
     const inputHandler = (e) => {
         if (e.target.name.includes('key')){
             setKeysState({...keysState, [e.target.name] : data.options.indexOf(e.target.value)})
-            formState.keys[e.target.name.slice(-1)] = data.options.indexOf(e.target.value)
+            data.keys[e.target.name.slice(-1)] = data.options.indexOf(e.target.value)
         }
         if (e.target.name.includes('value')){
             setValuesState({...valuesState, [e.target.name] : e.target.value})
-            formState.values[e.target.name.slice(-1)] = e.target.value 
+            data.values[e.target.name.slice(-1)] = e.target.value 
         }
     }
     
     const blurHandler = () => {
-        changeHandler(formState)
+        changeHandler(data)
     }
 
     return (
