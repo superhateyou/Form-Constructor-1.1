@@ -5,7 +5,7 @@ export const PasswordInput = ({data, changeHandler}) => {
     const [inputState, setInputState] = useState(data.value)
 
     const inputHandler = (e) => {
-        setInputState(e.target.checked)
+        setInputState(e.target.value)
         formState.value = e.target.value
     }
 
